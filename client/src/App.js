@@ -1,22 +1,9 @@
 import React from "react";
 
+import ImageUpload from "./components/ImageUpload";
+
 const App = () => {
-  return (
-    <form
-      method="POST"
-      action="/profile-upload-single"
-      enctype="multipart/form-data"
-    >
-      <div>
-        <label>Upload Images</label>
-      </div>
-      <br />
-      <div>
-        <input type="file" name="images" required />
-        <input type="submit" value="Upload" />
-      </div>
-    </form>
-  );
+  return <ImageUpload />;
 };
 
 export default App;
