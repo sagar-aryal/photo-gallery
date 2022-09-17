@@ -10,7 +10,7 @@ const ImageUpload = () => {
         </div>
         <br />
         <div>
-          <input type="file" name="images" required />
+          <input type="file" name="images" accept="image/*" required />
           <input type="submit" value="Upload" />
         </div>
       </form>
