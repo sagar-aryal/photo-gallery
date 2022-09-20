@@ -16,7 +16,9 @@ export const uploadImage = createAsyncThunk(
   "image/postImage",
   async (formData) => {
     try {
-      const response = await axios.post(`${baseURL}/image-upload`, formData);
+      const response = await axios.post(`${baseURL}/image-upload`, formData, {
+        headers: { "Content-Type": "multipart/form-data" },
+      });
       return response.data;
     } catch (error) {
       console.log(error.message);
@@ -55,7 +57,7 @@ const imageSlice = createSlice({
     },
     [uploadImage.fulfilled]: (state, action) => {
       state.loading = false;
-      state.images.push({ ...action.payload });
+      state.images = state.images.push({ ...action.payload });
     },
     [uploadImage.rejected]: (state, action) => {
       state.error = true;

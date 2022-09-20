@@ -12,8 +12,10 @@ const ImageUpload = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    // Multer accepts form-data
     const formData = new FormData();
-    formData.append("file", image);
+    formData.append("image", image);
+    console.log(formData);
     dispatch(uploadImage(formData));
   };
 

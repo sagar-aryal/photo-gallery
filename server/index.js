@@ -19,6 +19,8 @@ app.use(
   })
 );
 app.use(cors());
+
+// set uploads file public
 app.use("/uploads", express.static("uploads"));
 
 // connect to databse

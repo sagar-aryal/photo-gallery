@@ -7,6 +7,7 @@ import ImageItems from "./ImageItems";
 const Images = () => {
   const { images, loading, error } = useSelector((state) => state.image);
   const dispatch = useDispatch();
+  console.log(images);
 
   useEffect(() => {
     dispatch(fetchImages());
